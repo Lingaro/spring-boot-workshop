@@ -1,4 +1,4 @@
-package com.lingaro.web;
+package com.lingaro.web.person;
 
 import com.lingaro.web.person.Person;
 import com.lingaro.web.person.PersonRepository;

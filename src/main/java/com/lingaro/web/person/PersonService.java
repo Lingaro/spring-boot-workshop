@@ -16,7 +16,7 @@ public class PersonService {
 
     public Person save(Person person) {
         LOG.fine("New person: " + person);
-        if(personRepository.count() > 5) {
+        if(personRepository.count() >= 5) {
             throw new IllegalArgumentException("Person limit reached");
         }
         return personRepository.save(person);
