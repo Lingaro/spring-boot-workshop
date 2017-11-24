@@ -1,0 +1,17 @@
+#
+# systemd service descriptor
+# Place this file in /etc/systemd/system/spring.service
+# Control the service using systemctl e.g.:
+#   sudo systemctl restart spring
+#
+[Unit]
+Description=spring
+After=syslog.target
+
+[Service]
+User=app
+ExecStart=/var/spring/spring-project.jar
+SuccessExitStatus=143
+
+[Install]
+WantedBy=multi-user.target
