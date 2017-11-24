@@ -1,4 +1,4 @@
-package com.lingaro.web.dto;
+package com.lingaro.web.person;
 
 import org.hibernate.validator.constraints.NotEmpty;
 
@@ -22,5 +22,14 @@ public class Person {
     public Person(String name, String surname) {
         this.name = name;
         this.surname = surname;
+    }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", surname='" + surname + '\'' +
+                '}';
     }
 }
