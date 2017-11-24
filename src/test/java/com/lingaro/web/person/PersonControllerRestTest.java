@@ -1,7 +1,7 @@
 package com.lingaro.web.person;
 
-import com.lingaro.web.person.Person;
 import org.hamcrest.Matchers;
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,7 +21,12 @@ import static org.springframework.boot.test.context.SpringBootTest.WebEnvironmen
 public class PersonControllerRestTest {
     @Autowired
     TestRestTemplate rest;
-    
+
+    @Before
+    public void authenticate() {
+        rest = rest.withBasicAuth("admin", "pass");
+    }
+
     @Test
     public void person() throws Exception {
         List<Person> initial = rest.getForEntity("/person", List.class).getBody();

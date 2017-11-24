@@ -2,6 +2,7 @@ package com.lingaro.web.person;
 
 import org.springframework.stereotype.Service;
 
+import javax.annotation.security.RolesAllowed;
 import java.util.logging.Logger;
 
 @Service
@@ -14,6 +15,7 @@ public class PersonService {
         this.personRepository = personRepository;
     }
 
+    @RolesAllowed("ADMIN")
     public Person save(Person person) {
         LOG.fine("New person: " + person);
         if(personRepository.count() >= 5) {
