@@ -21,6 +21,10 @@ public class PersonServiceSpringTest {
         for(int i=0;i<5;i++){
             personService.save(new Person("Jon","Snow"));
         }
+        assertLimitReached(personService);
+    }
+
+    public static void assertLimitReached(PersonService personService) {
         try{
             personService.save(new Person("Rick","Sanchez"));
             fail("Exception expected");
