@@ -7,6 +7,7 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.client.TestRestTemplate;
+import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.Arrays;
@@ -18,13 +19,14 @@ import static org.springframework.boot.test.context.SpringBootTest.WebEnvironmen
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = RANDOM_PORT)
+@ActiveProfiles("dev")
 public class PersonControllerRestTest {
     @Autowired
     TestRestTemplate rest;
 
     @Before
     public void authenticate() {
-        rest = rest.withBasicAuth("admin", "pass");
+        rest = rest.withBasicAuth("test", "test");
     }
 
     @Test
