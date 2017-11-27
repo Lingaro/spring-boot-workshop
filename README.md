@@ -1,15 +1,17 @@
 # Agenda
 
-Prerequistes:
+Prerequisites:
+
 * JDK 8
 * IDE (prefered: Intellij Idea Comunity or Ultimate)
 * git
+* sdkman
 
 We'll create a Spring Boot project from scratch.
 
 * json endpoints
 * embeded H2 database
-* repositories
+* data repository
 * dependency injection
 * logging
 * testing
@@ -80,6 +82,11 @@ REST client.
 ```
 java -jar target/spring-project.jar --spring.profiles.active=dev
 ```
+# Deploing
+
+* `war` on App Server
+* Linux service
+* Docker container
 
 ## Linux service
 ```
@@ -101,4 +108,18 @@ View logs:
 ```
 journalctl -u spring  
 journalctl -fu spring # follow
+```
+
+## Docker container
+Build the image:
+```
+docker build -t spring-app .
+```
+Start the service:
+```
+docker service create -p 80:8080 --name spring-service spring-app
+```
+Optionally test (just run) the container:
+```
+docker run -it --rm -p 8080:8080 spring-app
 ```
