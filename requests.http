@@ -1,0 +1,36 @@
+POST http://admin:pass@localhost:8080/person
+Content-Type: application/json
+
+{
+  "name": "Rick",
+  "surname": "Sanchez"
+}
+
+###
+POST http://admin:pass@localhost:8080/person
+Content-Type: application/json
+
+
+{
+  "name": "Peter",
+  "surname": "Griffin"
+}
+
+###
+
+GET http://user:pass@localhost:8080/person
+
+### dev only:
+
+GET http://test:test@localhost:8080/person
+
+###
+POST http://test:test@localhost:8080/person
+Content-Type: application/json
+
+{
+  "name": "Dev",
+  "surname": "User"
+}
+
+###

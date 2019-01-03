@@ -6,12 +6,12 @@ import javax.annotation.security.RolesAllowed;
 import java.util.logging.Logger;
 
 @Service
-public class PersonService {
+class PersonService {
     public static final Logger LOG = Logger.getLogger(PersonService.class.getName());
 
     private final PersonRepository personRepository;
 
-    public PersonService(PersonRepository personRepository) {
+    PersonService(PersonRepository personRepository) {
         this.personRepository = personRepository;
     }
 

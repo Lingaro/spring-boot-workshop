@@ -1,10 +1,10 @@
 package com.lingaro.web.person;
 
-import org.hibernate.validator.constraints.NotEmpty;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.validation.constraints.NotEmpty;
 
 @Entity
 public class Person {
@@ -16,7 +16,7 @@ public class Person {
     @NotEmpty
     public String surname;
 
-    public Person() {
+    Person() {
     }
 
     public Person(String name, String surname) {

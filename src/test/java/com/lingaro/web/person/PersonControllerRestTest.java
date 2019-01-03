@@ -30,7 +30,7 @@ public class PersonControllerRestTest {
     }
 
     @Test
-    public void person() throws Exception {
+    public void person() {
         List<Person> initial = rest.getForEntity("/person", List.class).getBody();
         assertThat(
                 initial,

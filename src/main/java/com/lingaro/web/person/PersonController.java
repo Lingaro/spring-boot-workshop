@@ -1,20 +1,17 @@
 package com.lingaro.web.person;
 
-import com.lingaro.web.person.Person;
-import com.lingaro.web.person.PersonRepository;
-import com.lingaro.web.person.PersonService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
 @RequestMapping("/person")
-public class PersonController {
+class PersonController {
 
     private final PersonRepository personRepository;
     private final PersonService personService;
 
-    public PersonController(PersonRepository personRepository, PersonService personService) {
+    PersonController(PersonRepository personRepository, PersonService personService) {
         this.personRepository = personRepository;
         this.personService = personService;
     }
