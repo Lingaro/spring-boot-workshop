@@ -5,7 +5,6 @@ Prerequisites:
 * JDK 8
 * IDE (prefered: Intellij Idea Comunity or Ultimate)
 * git
-* sdkman
 
 We'll create a Spring Boot project from scratch.
 
@@ -21,13 +20,15 @@ We'll create a Spring Boot project from scratch.
 * security
 * deployment as linux service
 
-# Spring CLI
+# Spring CLI, Spring Initializr
 
 [Install sdkman](https://docs.spring.io/spring-boot/docs/current/reference/html/getting-started-installing-spring-boot.html#getting-started-sdkman-cli-installation)
 
     sdk install springboot
     
     spring init my-project
+    
+or download from https://start.spring.io/  
 
 ## Empty project walkthrough
 * pom.xml 
@@ -49,7 +50,7 @@ Spring Boot apps also can be:
 Note: there's already a `.gitignore'
 
 ## Rename
-* pom: artefect & group
+* pom: artefact & group
 * DemoApplication
 * DemoApplicationTests
 * package
@@ -72,10 +73,6 @@ public class Application {
   }
 }
 ```
-
-## [Postman](https://www.getpostman.com/)
-
-REST client.
 
 ## Profiles
 
